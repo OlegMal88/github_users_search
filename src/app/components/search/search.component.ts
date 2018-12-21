@@ -7,7 +7,7 @@ import {Subscription} from 'rxjs/Subscription';
   templateUrl: './search.template.html',
   styleUrls: ['./search.styles.css']
 })
-export class SearchComponent implements OnDestroy {
+class SearchComponent implements OnDestroy {
 
   @Output()
   public searchChange: EventEmitter<string> = new EventEmitter();
@@ -20,3 +20,5 @@ export class SearchComponent implements OnDestroy {
     this.searchQuerySubscription.unsubscribe();
   }
 }
+
+export {SearchComponent};
