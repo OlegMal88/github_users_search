@@ -11,7 +11,6 @@ class SearchComponent {
   public searchQuery: string;
 
   public onSearch(): void {
-    console.log('here', this.searchQuery)
     this.searchChange.emit(this.searchQuery);
   }
 }

@@ -7,7 +7,6 @@ import {Component} from '@angular/core';
 class AppComponent {
 
   onSearchChange(searchQuery: string): void {
-    console.log(searchQuery);
   }
 
 }
