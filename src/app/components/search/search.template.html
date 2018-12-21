@@ -1,1 +1,7 @@
-<input type="text" [(ngModel)]="searchQuery" placeholder="Type user's name">
+<input type="text"
+       #search
+       [ngModel]="searchQuery"
+       (keyup.enter)="onSearch()"
+       placeholder="Type user's name">
+
+<button onclick="onSearch()">Search</button>
