@@ -12,13 +12,13 @@ import {FormsModule} from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
-    SearchComponent,
-    StoreModule.forRoot(reducerRef),
-    EffectsModule.forRoot([])
+    SearchComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    StoreModule.forRoot(reducerRef),
+    EffectsModule.forRoot([])
   ],
   providers: [],
   bootstrap: [AppComponent]
