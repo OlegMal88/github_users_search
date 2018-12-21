@@ -7,11 +7,13 @@ import {StoreModule} from "@ngrx/store";
 import {reducerRef} from "./app.state";
 import {EffectsModule} from "@ngrx/effects";
 import {FormsModule} from '@angular/forms';
+import {SearchPageComponent} from './components/pages/searchPage/searchPage.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
+    SearchPageComponent,
     SearchComponent
   ],
   imports: [

@@ -12,7 +12,7 @@ class UserBasicInfoComponent {
   @Output()
   userViewMore: EventEmitter<void> = new EventEmitter();
 
-  public userViewMore(): void {
+  public onUserViewMore(): void {
 
   }
 }

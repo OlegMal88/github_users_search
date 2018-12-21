@@ -1,4 +1,4 @@
-import {SEARCH_SET_QUERY, SearchAction} from "./search.action";
+import {SEARCH_SET_QUERY, SearchAction} from "./searchPage.action";
 
 interface SearchState {
   query: string;

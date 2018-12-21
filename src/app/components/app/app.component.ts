@@ -5,10 +5,6 @@ import {Component} from '@angular/core';
   templateUrl: './app.template.html',
 })
 class AppComponent {
-
-  onSearchChange(searchQuery: string): void {
-  }
-
 }
 
 export {AppComponent};
