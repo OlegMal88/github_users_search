@@ -9,4 +9,10 @@ const reducerRef: ActionReducerMap<StoreRootState> = {
   search: searchReducer
 };
 
-export {StoreRootState, reducerRef};
+const searchRootStateSelector = (state: StoreRootState) => state.search;
+
+export {
+  StoreRootState,
+  reducerRef,
+  searchRootStateSelector
+};

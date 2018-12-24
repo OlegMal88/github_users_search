@@ -1,5 +1,5 @@
 import {Component, EventEmitter, Input, Output} from '@angular/core';
-import {UserBasic} from '../user.dictionary';
+import {SearchUserBasic} from "../../pages/searchPage/searchPage.dictionary";
 
 @Component({
   selector: 'app-user-basic-info',
@@ -7,7 +7,7 @@ import {UserBasic} from '../user.dictionary';
 })
 class UserBasicInfoComponent {
   @Input()
-  user: UserBasic;
+  user: SearchUserBasic;
 
   @Output()
   userViewMore: EventEmitter<void> = new EventEmitter();
