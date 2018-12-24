@@ -20,10 +20,7 @@
       "prefix": "app",
       "styles": [
         "styles.scss",
-        "../node_modules/bootstrap/dist/css/bootstrap.min.css",
-        "app/components/search/search.styles.css",
-        "app/components/searchPage/searchPage.styles.scss",
-        "app/components/user/userBasicInfo/userBasicInfo.styles.css"
+        "../node_modules/bootstrap/dist/css/bootstrap.min.css"
       ],
       "scripts": [],
       "environmentSource": "environments/environment.ts",

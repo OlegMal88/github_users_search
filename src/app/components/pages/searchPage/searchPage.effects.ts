@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {HttpClient, HttpParams} from '@angular/common/http';
+import {HttpClient} from '@angular/common/http';
 import {Actions, Effect} from '@ngrx/effects';
 import {
   SEARCH_SET_QUERY,
@@ -8,7 +8,6 @@ import {
   SearchSetSearchResultCount,
   SearchSetUsers
 } from './searchPage.action';
-import {GIT_HUB_API, GIT_HUB_SEARCH_USER_END_POINT} from '../../../app.dictionary';
 import {of} from 'rxjs/observable/of';
 import 'rxjs/add/operator/switchMap';
 import 'rxjs/add/operator/map';
