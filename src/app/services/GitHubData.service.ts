@@ -1,10 +1,10 @@
-import {Injectable} from "@angular/core";
-import {HttpClient, HttpParams, HttpResponse} from "@angular/common/http";
-import {Observable} from "rxjs";
-import {GIT_HUB_API, GIT_HUB_SEARCH_USER_END_POINT} from "../../../app.dictionary";
+import {Injectable} from '@angular/core';
+import {HttpClient, HttpParams} from '@angular/common/http';
+import {Observable} from 'rxjs';
+import {GIT_HUB_API, GIT_HUB_SEARCH_USER_END_POINT} from '../app.dictionary';
 
 @Injectable()
-class SearchPageDataService {
+class GitHubDataService {
   constructor(private http: HttpClient) {
   }
 
@@ -21,4 +21,4 @@ class SearchPageDataService {
   }
 }
 
-export {SearchPageDataService};
+export {GitHubDataService};

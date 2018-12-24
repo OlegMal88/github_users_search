@@ -12,9 +12,9 @@ import {of} from 'rxjs/observable/of';
 import 'rxjs/add/operator/switchMap';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
-import {SearchResultUserInfo} from "./searchPage.dictionary";
-import {Observable} from "rxjs";
-import {SearchPageDataService} from "./searchPageData.service";
+import {SearchResultUserInfo} from './searchPage.dictionary';
+import {Observable} from 'rxjs';
+import {GitHubDataService} from '../../../services/GitHubData.service';
 
 @Injectable()
 class SearchPageEffects {
@@ -32,7 +32,7 @@ class SearchPageEffects {
     );
 
   constructor(private actions$: Actions,
-              private searchDataService: SearchPageDataService,
+              private searchDataService: GitHubDataService,
               private http: HttpClient) {
   }
 }

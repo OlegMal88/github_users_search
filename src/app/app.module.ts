@@ -12,7 +12,7 @@ import {SearchPageService} from './components/pages/searchPage/searchPage.servic
 import {HttpClientModule} from '@angular/common/http';
 import {UserBasicInfoComponent} from './components/user/userBasicInfo/userBasicInfo.component';
 import {UserInfoComponent} from './components/user/userInfo/userInfo.component';
-import {SearchPageDataService} from './components/pages/searchPage/searchPageData.service';
+import {GitHubDataService} from './services/GitHubData.service';
 import {NgbAccordionConfig, NgbAccordionModule, NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 
@@ -35,7 +35,7 @@ import {NgbAccordionConfig, NgbAccordionModule, NgbModule} from '@ng-bootstrap/n
   ],
   providers: [
     SearchPageService,
-    SearchPageDataService,
+    GitHubDataService,
     NgbAccordionConfig
   ],
   bootstrap: [AppComponent]
