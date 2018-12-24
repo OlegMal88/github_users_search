@@ -1,5 +1,5 @@
 import {Component, EventEmitter, Input, Output} from '@angular/core';
-import {SearchUserBasic} from "../../pages/searchPage/searchPage.dictionary";
+import {SearchUserBasic} from '../../pages/searchPage/searchPage.dictionary';
 
 @Component({
   selector: 'app-user-basic-info',

@@ -1,5 +1,6 @@
 <div>
-  <img src="{user.avatar_url}" alt="{user.login} avatar"/>
+  <img [src]="user.avatar_url"
+       alt="{{user.login}} avatar"/>
   <span>{{user.login}}</span>
 
   <button (click)="onUserViewMore()">More...</button>
