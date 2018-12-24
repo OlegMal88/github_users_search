@@ -1,6 +1,16 @@
-<input type="text"
-       [(ngModel)]="searchQuery"
-       (keyup.enter)="onSearch()"
-       placeholder="Type user's name">
-
-<button (click)="onSearch()">Search</button>
+<form class="form-inline">
+  <div class="form-group mx-sm-3 mb-2">
+    <label for="inputSearch"
+           class="sr-only">Search</label>
+    <input type="text"
+           class="form-control"
+           id="inputSearch"
+           [(ngModel)]="searchQuery"
+           (keyup.enter)="onSearch()"
+           placeholder="Search">
+  </div>
+  <button type="submit"
+          (click)="onSearch()"
+          class="btn btn-primary mb-2">Search
+  </button>
+</form>

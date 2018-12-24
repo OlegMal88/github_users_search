@@ -6,6 +6,7 @@ import {SearchUserBasic} from "./searchPage.dictionary";
 @Component({
   selector: 'app-search-page',
   templateUrl: './searchPage.template.html',
+  styleUrls:['./searchPage.styles.scss']
 })
 class SearchPageComponent {
 
@@ -17,10 +18,6 @@ class SearchPageComponent {
 
   public onSearchChange(searchQuery: string): void {
     this.searchPageService.onSearch(searchQuery);
-  }
-
-  public trackByFn(index, item) {
-    return index; // or item.id
   }
 }
 

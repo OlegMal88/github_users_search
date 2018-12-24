@@ -1,6 +1,4 @@
 <app-search
   (searchChange)="onSearchChange($event)">
 </app-search>
-<div *ngFor="let user of users$ | async;  trackBy:trackByFn">
-  <app-user-basic-info [user]="user"></app-user-basic-info>
-</div>
+<app-user-basic-info [users]="users$ | async"></app-user-basic-info>

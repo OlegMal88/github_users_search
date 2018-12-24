@@ -1,7 +1,16 @@
-<div>
-  <img [src]="user.avatar_url"
-       alt="{{user.login}} avatar"/>
-  <span>{{user.login}}</span>
-
-  <button (click)="onUserViewMore()">More...</button>
-</div>
+<ngb-accordion #acc="ngbAccordion"
+               activeIds="ngb-panel-0">
+  <ngb-panel *ngFor="let user of users;  trackBy:trackByFn">
+    <ng-template ngbPanelTitle>
+      <div class="text-left">
+        <img [src]="user.avatar_url"
+             class="logo_size "
+             alt="{{user.login}} avatar"/>
+        <span>{{user.login}}</span>
+      </div>
+    </ng-template>
+    <ng-template ngbPanelContent>
+      Hello
+    </ng-template>
+  </ngb-panel>
+</ngb-accordion>

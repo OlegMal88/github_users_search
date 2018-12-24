@@ -13,6 +13,7 @@ import {HttpClientModule} from '@angular/common/http';
 import {UserBasicInfoComponent} from './components/user/userBasicInfo/userBasicInfo.component';
 import {UserInfoComponent} from './components/user/userInfo/userInfo.component';
 import {SearchPageDataService} from './components/pages/searchPage/searchPageData.service';
+import {NgbAccordionConfig, NgbAccordionModule, NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 
 @NgModule({
@@ -28,11 +29,14 @@ import {SearchPageDataService} from './components/pages/searchPage/searchPageDat
     FormsModule,
     HttpClientModule,
     StoreModule.forRoot(reducerRef),
-    EffectsModule.forRoot([SearchPageEffects])
+    EffectsModule.forRoot([SearchPageEffects]),
+    NgbModule.forRoot(),
+    NgbAccordionModule.forRoot()
   ],
   providers: [
     SearchPageService,
-    SearchPageDataService
+    SearchPageDataService,
+    NgbAccordionConfig
   ],
   bootstrap: [AppComponent]
 })
