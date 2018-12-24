@@ -19,6 +19,10 @@ class SearchPageComponent {
   public onSearchChange(searchQuery: string): void {
     this.searchPageService.onSearch(searchQuery);
   }
+
+  public onUserViewMore(user: SearchUserBasic): void {
+    console.log(user);
+  }
 }
 
 export {SearchPageComponent};

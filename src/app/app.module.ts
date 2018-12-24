@@ -14,6 +14,10 @@ import {UserBasicInfoComponent} from './components/user/userBasicInfo/userBasicI
 import {UserInfoComponent} from './components/user/userInfo/userInfo.component';
 import {GitHubDataService} from './services/GitHubData.service';
 import {NgbAccordionConfig, NgbAccordionModule, NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import {UserListComponent} from './components/user/userList/userList.component';
+import {UserListEffects} from './components/user/userList/userList.effects';
+import {UserListDataService} from './components/user/userList/userListData.service';
+import {UserListService} from './components/user/userList/userList.service';
 
 
 @NgModule({
@@ -22,19 +26,22 @@ import {NgbAccordionConfig, NgbAccordionModule, NgbModule} from '@ng-bootstrap/n
     SearchPageComponent,
     SearchComponent,
     UserBasicInfoComponent,
-    UserInfoComponent
+    UserInfoComponent,
+    UserListComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpClientModule,
     StoreModule.forRoot(reducerRef),
-    EffectsModule.forRoot([SearchPageEffects]),
+    EffectsModule.forRoot([SearchPageEffects, UserListEffects]),
     NgbModule.forRoot(),
     NgbAccordionModule.forRoot()
   ],
   providers: [
     SearchPageService,
+    UserListService,
+    UserListDataService,
     GitHubDataService,
     NgbAccordionConfig
   ],

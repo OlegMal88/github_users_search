@@ -5,6 +5,7 @@ import {Component} from '@angular/core';
   templateUrl: './userInfo.template.html',
 })
 class UserInfoComponent {
+
 }
 
 export {UserInfoComponent};

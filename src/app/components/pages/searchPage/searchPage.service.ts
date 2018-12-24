@@ -15,7 +15,7 @@ class SearchPageService {
   constructor(private store: Store<StoreRootState>) {
   }
 
-  public onSearch(searchQuery: string) {
+  public onSearch(searchQuery: string): void {
     this.store.dispatch(new SearchSetQuery(searchQuery));
   }
 }

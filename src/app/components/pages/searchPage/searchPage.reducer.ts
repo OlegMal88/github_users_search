@@ -5,7 +5,7 @@ import {searchRootStateSelector} from '../../../app.dictionary';
 
 interface SearchState {
   query: string;
-  users: SearchUserBasic[],
+  users: SearchUserBasic[];
   resultCount: number;
 }
 

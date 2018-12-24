@@ -1,6 +1,5 @@
 import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {SearchUserBasic} from '../../pages/searchPage/searchPage.dictionary';
-import {NgbPanelChangeEvent} from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-user-basic-info',
@@ -8,26 +7,22 @@ import {NgbPanelChangeEvent} from '@ng-bootstrap/ng-bootstrap';
   styleUrls: ['./userBasicInfo.styles.css']
 })
 class UserBasicInfoComponent {
-
-  private _users: SearchUserBasic[];
-
-  @Input() set users(users: SearchUserBasic[]) {
-    this._users = users;
-  };
-
-  get users(): SearchUserBasic[] {
-    return this._users;
-  };
+  private _user: SearchUserBasic;
 
   @Output()
-  panelChange: EventEmitter<void> = new EventEmitter();
+  userViewMore: EventEmitter<SearchUserBasic> = new EventEmitter<SearchUserBasic>();
 
-  public onPanelChange(event: NgbPanelChangeEvent): void {
-    this.panelChange.emit(this.users[event.panelId]);
+  @Input()
+  set user(user) {
+    this._user = user;
   }
 
-  public trackByFn(index, item: SearchUserBasic) {
-    return item.login; // or item.id
+  get user(): SearchUserBasic {
+    return this._user;
+  }
+
+  public onUserViewMore(): void {
+    this.userViewMore.emit(this.user);
   }
 }
 

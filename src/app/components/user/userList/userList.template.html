@@ -1,0 +1,14 @@
+<ngb-accordion #acc="ngbAccordion">
+  <ngb-panel *ngFor="let user of userList; trackBy:trackByFn">
+    <ng-template ngbPanelTitle>
+      <app-user-basic-info
+        [user]="user"
+        (userViewMore)="onUserViewMore($event)"
+      ></app-user-basic-info>
+    </ng-template>
+    <ng-template ngbPanelContent>
+      Hello
+    </ng-template>
+  </ngb-panel>
+</ngb-accordion>
+
