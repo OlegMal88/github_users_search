@@ -1,4 +1,5 @@
 <app-search
+  [resultsCount]="resultsCount$ | async"
   (searchChange)="onSearchChange($event)">
 </app-search>
 <app-user-basic-info [users]="users$ | async"></app-user-basic-info>

@@ -10,7 +10,7 @@ import {searchGetResultsCountSelector, searchGetUsersSelector} from './searchPag
 class SearchPageService {
 
   public readonly users$: Observable<SearchUserBasic[]> = this.store.select(searchGetUsersSelector);
-  public readonly totalCount$: Observable<number> = this.store.select(searchGetResultsCountSelector);
+  public readonly resultsCount$: Observable<number> = this.store.select(searchGetResultsCountSelector);
 
   constructor(private store: Store<StoreRootState>) {
   }

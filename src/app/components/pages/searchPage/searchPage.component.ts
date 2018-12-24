@@ -1,7 +1,7 @@
 import {Component} from '@angular/core';
 import {SearchPageService} from './searchPage.service';
-import {Observable} from "rxjs";
-import {SearchUserBasic} from "./searchPage.dictionary";
+import {Observable} from 'rxjs';
+import {SearchUserBasic} from './searchPage.dictionary';
 
 @Component({
   selector: 'app-search-page',
@@ -11,7 +11,7 @@ import {SearchUserBasic} from "./searchPage.dictionary";
 class SearchPageComponent {
 
   public users$: Observable<SearchUserBasic[]> = this.searchPageService.users$;
-  public totslCount$: Observable<number> = this.searchPageService.totalCount$;
+  public resultsCount$: Observable<number> = this.searchPageService.resultsCount$;
 
   constructor(private searchPageService: SearchPageService) {
   }
