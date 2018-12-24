@@ -1,5 +1,6 @@
-<ngb-accordion #acc="ngbAccordion">
-  <ngb-panel *ngFor="let user of users;  trackBy:trackByFn">
+<ngb-accordion #acc="ngbAccordion"
+               (panelChange)="onPanelChange($event)">
+  <ngb-panel *ngFor="let user of users; trackBy:trackByFn">
     <ng-template ngbPanelTitle>
       <div class="text-left">
         <img [src]="user.avatar_url"
