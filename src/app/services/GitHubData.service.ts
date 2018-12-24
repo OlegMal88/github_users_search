@@ -19,6 +19,11 @@ class GitHubDataService {
     return this.http
       .get<T>(`${GIT_HUB_API}/${GIT_HUB_SEARCH_USER_END_POINT}`, {params});
   }
+
+  public loadUserInfo<T>(login: string): Observable<T> {
+    return this.http
+      .get<T>(`${GIT_HUB_API}/${GIT_HUB_SEARCH_USER_END_POINT}/${login}`);
+  }
 }
 
 export {GitHubDataService};

@@ -1,5 +1,4 @@
 import {Injectable} from '@angular/core';
-import {HttpClient} from '@angular/common/http';
 import {Actions, Effect} from '@ngrx/effects';
 import {
   SEARCH_SET_QUERY,
@@ -11,6 +10,7 @@ import {
 import {of} from 'rxjs/observable/of';
 import 'rxjs/add/operator/switchMap';
 import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/do';
 import 'rxjs/add/operator/catch';
 import {SearchResultUserInfo} from './searchPage.dictionary';
 import {Observable} from 'rxjs';
@@ -21,7 +21,7 @@ class SearchPageEffects {
   @Effect()
   public onSearch = this.actions$
     .ofType(SEARCH_SET_QUERY)
-    .switchMap(({payload}: SearchSetQuery) => this.searchDataService
+    .switchMap(({payload}: SearchSetQuery) => this.gitHubDataService
       .searchUsers<SearchResultUserInfo>(payload)
       .switchMap(({items, total_count}: SearchResultUserInfo) => Observable
         .from([new SearchSetUsers(items), new SearchSetSearchResultCount(total_count)]))
@@ -32,8 +32,7 @@ class SearchPageEffects {
     );
 
   constructor(private actions$: Actions,
-              private searchDataService: GitHubDataService,
-              private http: HttpClient) {
+              private gitHubDataService: GitHubDataService) {
   }
 }
 

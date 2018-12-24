@@ -16,7 +16,6 @@ import {GitHubDataService} from './services/GitHubData.service';
 import {NgbAccordionConfig, NgbAccordionModule, NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {UserListComponent} from './components/user/userList/userList.component';
 import {UserListEffects} from './components/user/userList/userList.effects';
-import {UserListDataService} from './components/user/userList/userListData.service';
 import {UserListService} from './components/user/userList/userList.service';
 
 
@@ -41,7 +40,6 @@ import {UserListService} from './components/user/userList/userList.service';
   providers: [
     SearchPageService,
     UserListService,
-    UserListDataService,
     GitHubDataService,
     NgbAccordionConfig
   ],
