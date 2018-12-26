@@ -1,5 +1,5 @@
 import {SearchUserBasic} from '../../pages/searchPage/searchPage.dictionary';
-import {UserListAction, UserListSetSelectedUser, UserListSetSelectedUserBasic} from './userList.action';
+import {UserListActions, UserListSetSelectedUser, UserListSetSelectedUserBasic} from './userList.actions';
 
 interface UserListState {
   selectedUserBasic: SearchUserBasic;
@@ -11,7 +11,7 @@ const defaultUserListState: UserListState = {
   selectedUser: undefined
 };
 
-function userListReducer(state = defaultUserListState, action: UserListAction) {
+function userListReducer(state = defaultUserListState, action: UserListActions) {
   if (action instanceof UserListSetSelectedUserBasic) {
     return {
       ...state,

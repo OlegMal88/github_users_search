@@ -21,6 +21,11 @@ class UserListComponent {
   public onUserViewMore(user: SearchUserBasic): void {
     this.userListService.onUserLoad(user);
   }
+
+  public onUserSelected(userId: string): void {
+    console.log('user', userId);
+    // this.userListService.onUserLoad()
+  }
 }
 
 export {UserListComponent};

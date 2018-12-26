@@ -1,28 +1,28 @@
 import {Action} from '@ngrx/store';
 import {SearchUserBasic} from '../../pages/searchPage/searchPage.dictionary';
-import {User} from '../user.dictionary';
 
-const USER_LIST_SET_SELECTED_USER_BASIC: string = 'USER_LIST_SET_SELECTED_USER_BASIC';
-const USER_LIST_SET_SELECTED_USER: string = 'USER_LIST_SET_SELECTED_USER';
+const USER_LIST_SET_SELECTED_USER_BASIC: string = '[User] set selected user basic';
+const USER_LIST_SET_SELECTED_USER: string = '[User] set selected user';
 
 class UserListSetSelectedUserBasic implements Action {
   public readonly type: string = USER_LIST_SET_SELECTED_USER_BASIC;
 
-  constructor(payload: SearchUserBasic) {
+  constructor(public payload: SearchUserBasic) {
   }
 }
+
 class UserListSetSelectedUser implements Action {
   public readonly type: string = USER_LIST_SET_SELECTED_USER;
 
-  constructor(payload: User) {
+  constructor(public payload: SearchUserBasic) {
   }
 }
 
-type UserListAction = UserListSetSelectedUserBasic
+type UserListActions = UserListSetSelectedUserBasic
   | UserListSetSelectedUser;
 
 export {
-  UserListAction,
+  UserListActions,
   USER_LIST_SET_SELECTED_USER_BASIC,
   USER_LIST_SET_SELECTED_USER,
   UserListSetSelectedUserBasic,

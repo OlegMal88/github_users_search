@@ -2,7 +2,7 @@ import {Injectable} from '@angular/core';
 import {SearchUserBasic} from '../../pages/searchPage/searchPage.dictionary';
 import {StoreRootState} from '../../../app.state';
 import {Store} from '@ngrx/store';
-import {UserListSetSelectedUserBasic} from './userList.action';
+import {UserListSetSelectedUserBasic} from './userList.actions';
 
 @Injectable()
 class UserListService {
