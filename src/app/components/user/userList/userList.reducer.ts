@@ -1,9 +1,10 @@
 import {SearchUserBasic} from '../../pages/searchPage/searchPage.dictionary';
 import {UserListActions, UserListSetSelectedUser, UserListSetSelectedUserBasic} from './userList.actions';
+import {UserListUserInfoExtended} from './userList.dictionary';
 
 interface UserListState {
   selectedUserBasic: SearchUserBasic;
-  selectedUser: SearchUserBasic;
+  selectedUser: UserListUserInfoExtended;
 }
 
 const defaultUserListState: UserListState = {
