@@ -1,5 +1,4 @@
-<ngb-accordion #acc="ngbAccordion"
-               (panelChange)="onUserSelected($event)">
+<ngb-accordion #acc="ngbAccordion">
   <ngb-panel *ngFor="let user of userList; trackBy:trackByFn">
     <ng-template ngbPanelTitle>
       <app-user-basic-info
@@ -8,7 +7,7 @@
       ></app-user-basic-info>
     </ng-template>
     <ng-template ngbPanelContent>
-      Hello
+      {{selectedUser$ | async | json}}
     </ng-template>
   </ngb-panel>
 </ngb-accordion>

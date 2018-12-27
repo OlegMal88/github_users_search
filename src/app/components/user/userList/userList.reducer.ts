@@ -1,6 +1,8 @@
 import {SearchUserBasic} from '../../pages/searchPage/searchPage.dictionary';
 import {UserListActions, UserListSetSelectedUser, UserListSetSelectedUserBasic} from './userList.actions';
 import {UserListUserInfoExtended} from './userList.dictionary';
+import {createSelector} from '@ngrx/store';
+import {userListRootStateSelector} from '../../../app.dictionary';
 
 interface UserListState {
   selectedUserBasic: SearchUserBasic;
@@ -30,7 +32,10 @@ function userListReducer(state = defaultUserListState, action: UserListActions) 
   return state;
 }
 
+const userListGetExtendedUserInfoSelector = createSelector(userListRootStateSelector, (state: UserListState) => state.selectedUser);
+
 export {
   UserListState,
-  userListReducer
+  userListReducer,
+  userListGetExtendedUserInfoSelector
 };
