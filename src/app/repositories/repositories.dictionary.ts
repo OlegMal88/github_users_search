@@ -1,0 +1,4 @@
+const REPOSITORIES_ROUTE_LINK: string = '/repositories';
+const REPOSITORIES_ROUTE_FULL_LINK = 'repositories/:login';
+
+export {REPOSITORIES_ROUTE_LINK, REPOSITORIES_ROUTE_FULL_LINK};

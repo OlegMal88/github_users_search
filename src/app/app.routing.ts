@@ -1,15 +1,16 @@
 import {Routes} from '@angular/router';
-import {UserListComponent} from './components/user/userList/userList.component';
+import {USERS_SEARCH_ROUTE} from './app.dictionary';
+import {SearchPageComponent} from './components/pages/searchPage/searchPage.component';
 
 const appRoutes: Routes = [
   {
     path: '',
-    redirectTo: '/usersList',
+    redirectTo: USERS_SEARCH_ROUTE,
     pathMatch: 'full'
   },
   {
-    path: 'usersList',
-    component: UserListComponent
+    path: USERS_SEARCH_ROUTE,
+    component: SearchPageComponent
   }
 ];
 

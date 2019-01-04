@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {Actions, Effect} from '@ngrx/effects';
 import {
-  SEARCH_SET_QUERY,
+  SearchAction,
   SearchSetQuery,
   SearchSetSearchResultCount
 } from './searchPage.action';
@@ -10,8 +10,9 @@ import 'rxjs/add/operator/switchMap';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/do';
 import 'rxjs/add/operator/catch';
+import 'rxjs/add/operator/filter';
 import {Observable} from 'rxjs';
-import {GitHubDataService} from '../../../services/GitHubData.service';
+import {GitHubDataService} from '../../../shared/services/GitHubData.service';
 import {UserListUsersInfo} from '../../user/userList/userList.dictionary';
 import {UserListGetUsersFailure, UserListSetUsersInfo} from '../../user/userList/userList.actions';
 
@@ -19,7 +20,7 @@ import {UserListGetUsersFailure, UserListSetUsersInfo} from '../../user/userList
 class SearchPageEffects {
   @Effect()
   public onSearch = this.actions$
-    .ofType(SEARCH_SET_QUERY)
+    .filter((v: SearchAction) => v instanceof SearchSetQuery)
     .switchMap(({payload}: SearchSetQuery) => this.gitHubDataService
       .searchUsers<UserListUsersInfo>(payload)
       .switchMap(({items, total_count}: UserListUsersInfo) => Observable
