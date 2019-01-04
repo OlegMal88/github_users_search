@@ -1,7 +1,7 @@
 import {Routes} from '@angular/router';
-import {RepositoriesListComponent} from './repoeitoriesList/repositoriesList.component';
+import {RepositoriesListComponent} from './repositoriesList/repositoriesList.component';
 import {REPOSITORIES_ROUTE_FULL_LINK} from './repositories.dictionary';
-import {RepositoriesListResolver} from './repoeitoriesList/repositoriesList.resolver';
+import {RepositoriesListResolver} from './repositoriesList/repositoriesList.resolver';
 
 const repositoriesRoutes: Routes = [
   {

@@ -1,9 +1,10 @@
 import {createSelector, MemoizedSelector} from '@ngrx/store';
 import {RepositoriesListActions, RepositoriesListSetRepositories} from './repositoriesList.actions';
 import {repositoriesFeatureSelector} from '../repositories.state';
+import {RepositoriesListItem} from '../repositories.dictionary';
 
 interface RepositoriesListState {
-  repositories: any[]
+  repositories: RepositoriesListItem[]
 }
 
 const repositoriesListDefaultState: RepositoriesListState = {

@@ -3,12 +3,13 @@ import {
   RepositoriesListLoadRepositories,
   RepositoriesListSetRepositories, RepositoriesListSetRepositoriesFailure
 } from './repositoriesList.actions';
-import {REPOSITORIES_LIST_GET_REPOSITORIES_ERROR, RepositoriesListItem} from './repositoriesList.dictionary';
+import {REPOSITORIES_LIST_GET_REPOSITORIES_ERROR} from './repositoriesList.dictionary';
 import {Injectable} from '@angular/core';
 import {Actions, Effect} from '@ngrx/effects';
 import {Observable} from 'rxjs';
 import {GitHubDataService} from '../../shared/services/GitHubData.service';
 import 'rxjs/add/operator/filter';
+import {RepositoriesListItem} from '../repositories.dictionary';
 
 @Injectable()
 class RepositoriesListEffects {

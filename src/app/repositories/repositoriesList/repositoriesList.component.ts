@@ -1,6 +1,7 @@
 import {Component} from '@angular/core';
 import {Observable} from 'rxjs';
 import {RepositoriesListService} from './repositoriesList.service';
+import {RepositoriesListItem} from '../repositories.dictionary';
 
 @Component({
   selector: 'app-repositories-list',
@@ -9,7 +10,7 @@ import {RepositoriesListService} from './repositoriesList.service';
 })
 class RepositoriesListComponent {
 
-  public repositories$: Observable<any[]> = this.repositoriesListService.repositories$;
+  public repositories$: Observable<RepositoriesListItem[]> = this.repositoriesListService.repositories$;
 
   constructor(private repositoriesListService: RepositoriesListService) {
   }

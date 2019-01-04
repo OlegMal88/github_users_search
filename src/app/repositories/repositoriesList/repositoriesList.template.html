@@ -1,9 +1,10 @@
 <ngb-accordion #acc="ngbAccordion">
   <ngb-panel *ngFor="let repo of repositories$ | async; trackBy:trackByFn">
     <ng-template ngbPanelTitle>
+      <b>{{repo.full_name}}</b>
     </ng-template>
     <ng-template ngbPanelContent>
-      {{repo | json}}}
+      <app-repositories-info [repository]="repo"></app-repositories-info>
     </ng-template>
   </ngb-panel>
 </ngb-accordion>

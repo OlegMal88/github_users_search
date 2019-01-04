@@ -4,17 +4,19 @@ import {REPOSITORIES_FEATURE_SELECTOR} from './repositories.state';
 import {RouterModule} from '@angular/router';
 import {StoreModule} from '@ngrx/store';
 import {EffectsModule} from '@ngrx/effects';
-import {repositoriesListReducer} from './repoeitoriesList/repositoriesList.reducer';
-import {RepositoriesListComponent} from './repoeitoriesList/repositoriesList.component';
-import {RepositoriesListService} from './repoeitoriesList/repositoriesList.service';
-import {RepositoriesListResolver} from './repoeitoriesList/repositoriesList.resolver';
-import {RepositoriesListEffects} from './repoeitoriesList/repositoriesList.effects';
-import {SharedModule} from "../shared/shared.module";
+import {repositoriesListReducer} from './repositoriesList/repositoriesList.reducer';
+import {RepositoriesListComponent} from './repositoriesList/repositoriesList.component';
+import {RepositoriesListService} from './repositoriesList/repositoriesList.service';
+import {RepositoriesListResolver} from './repositoriesList/repositoriesList.resolver';
+import {RepositoriesListEffects} from './repositoriesList/repositoriesList.effects';
+import {SharedModule} from '../shared/shared.module';
+import {RepositoryInfoComponent} from './repositoryInfo/repositoryInfo.component';
 
 
 @NgModule({
   declarations: [
-    RepositoriesListComponent
+    RepositoriesListComponent,
+    RepositoryInfoComponent
   ],
   imports: [
     SharedModule,

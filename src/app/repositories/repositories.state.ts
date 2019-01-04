@@ -1,4 +1,4 @@
-import {RepositoriesListState} from './repoeitoriesList/repositoriesList.reducer';
+import {RepositoriesListState} from './repositoriesList/repositoriesList.reducer';
 import {createFeatureSelector, MemoizedSelector} from '@ngrx/store';
 
 const REPOSITORIES_FEATURE_SELECTOR: string = 'repositories';

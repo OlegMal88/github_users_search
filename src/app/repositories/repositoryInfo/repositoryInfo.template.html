@@ -1,0 +1,70 @@
+<form>
+  <div class="form-group">
+    <div>
+      <label for="description">Description</label>
+      <input type="text"
+             class="form-control"
+             id="description"
+             [value]="repository.description"
+             readonly>
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="col-md-4 mb-3">
+      <label for="forked">Forked</label>
+      <input type="text"
+             class="form-control"
+             id="forked"
+             value="Mark"
+             readonly
+             [value]="repository.fork">
+    </div>
+    <div class="col-md-4 mb-3">
+      <label for="fork_count">Fork count</label>
+      <input type="text"
+             class="form-control"
+             id="fork_count"
+             value="Mark"
+             readonly
+             [value]="repository.forks_count">
+    </div>
+    <div class="col-md-4 mb-3">
+      <label for="stars">Stars</label>
+      <input type="text"
+             class="form-control"
+             id="stars"
+             value="Mark"
+             readonly
+             [value]="repository.stargazers_count">
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="col-md-4 mb-3">
+      <label for="opened_issues">Has issues</label>
+      <input type="text"
+             class="form-control"
+             id="opened_issues"
+             value="Mark"
+             readonly
+             [value]="repository.has_issues">
+    </div>
+    <div class="col-md-4 mb-3">
+      <label for="open_issues_count">Open issues count</label>
+      <input type="text"
+             class="form-control"
+             id="open_issues_count"
+             value="Mark"
+             readonly
+             [value]="repository.open_issues_count">
+    </div>
+    <div class="col-md-4 mb-3">
+      <label for="size">Size</label>
+      <input type="text"
+             class="form-control"
+             id="size"
+             value="Mark"
+             readonly
+             [value]="repository.size">
+    </div>
+  </div>
+</form>

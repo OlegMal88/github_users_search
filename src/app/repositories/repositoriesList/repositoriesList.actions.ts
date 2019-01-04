@@ -1,4 +1,5 @@
 import {Action} from '@ngrx/store';
+import {RepositoriesListItem} from '../repositories.dictionary';
 
 const REPOSITORIES_LIST_SET_REPOSITORIES: string = '[Repositories] set repositories';
 const REPOSITORIES_LIST_SET_REPOSITORIES_FAILURE: string = '[Repositories] set repositories failure';
@@ -18,7 +19,7 @@ class RepositoriesListSetRepositoriesFailure implements Action {
 class RepositoriesListSetRepositories implements Action {
   public readonly type: string = REPOSITORIES_LIST_SET_REPOSITORIES;
 
-  constructor(public payload: any[]) {
+  constructor(public payload: RepositoriesListItem[]) {
   }
 }
 
