@@ -17,6 +17,8 @@ import {NgbAccordionConfig, NgbAccordionModule, NgbModule} from '@ng-bootstrap/n
 import {UserListComponent} from './components/user/userList/userList.component';
 import {UserListEffects} from './components/user/userList/userList.effects';
 import {UserListService} from './components/user/userList/userList.service';
+import {RouterModule} from '@angular/router';
+import {appRoutes} from './app.routing';
 
 
 @NgModule({
@@ -32,10 +34,11 @@ import {UserListService} from './components/user/userList/userList.service';
     BrowserModule,
     FormsModule,
     HttpClientModule,
+    RouterModule.forRoot(appRoutes),
     StoreModule.forRoot(reducerRef),
     EffectsModule.forRoot([SearchPageEffects, UserListEffects]),
     NgbModule.forRoot(),
-    NgbAccordionModule.forRoot()
+    NgbAccordionModule.forRoot(),
   ],
   providers: [
     SearchPageService,

@@ -1,17 +1,23 @@
-import {SearchUserBasic} from '../../pages/searchPage/searchPage.dictionary';
-import {UserListActions, UserListSetSelectedUser, UserListSetSelectedUserBasic} from './userList.actions';
-import {UserListUserInfoExtended} from './userList.dictionary';
+import {
+  UserListActions,
+  UserListSetSelectedUser,
+  UserListSetSelectedUserBasic,
+  UserListSetUsersInfo
+} from './userList.actions';
+import {UserListUserBasic, UserListUserInfoExtended} from './userList.dictionary';
 import {createSelector} from '@ngrx/store';
 import {userListRootStateSelector} from '../../../app.dictionary';
 
 interface UserListState {
-  selectedUserBasic: SearchUserBasic;
+  selectedUserBasic: UserListUserBasic;
   selectedUser: UserListUserInfoExtended;
+  users: UserListUserBasic[]
 }
 
 const defaultUserListState: UserListState = {
   selectedUserBasic: undefined,
-  selectedUser: undefined
+  selectedUser: undefined,
+  users: undefined
 };
 
 function userListReducer(state = defaultUserListState, action: UserListActions) {
@@ -29,13 +35,22 @@ function userListReducer(state = defaultUserListState, action: UserListActions) 
     };
   }
 
+  if (action instanceof UserListSetUsersInfo) {
+    return {
+      ...state,
+      users: action.payload
+    };
+  }
+
   return state;
 }
 
 const userListGetExtendedUserInfoSelector = createSelector(userListRootStateSelector, (state: UserListState) => state.selectedUser);
+const userListGetUsersSelector = createSelector(userListRootStateSelector, (state: UserListState) => state.users);
 
 export {
   UserListState,
   userListReducer,
-  userListGetExtendedUserInfoSelector
+  userListGetExtendedUserInfoSelector,
+  userListGetUsersSelector
 };

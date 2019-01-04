@@ -1,5 +1,5 @@
 <ngb-accordion #acc="ngbAccordion">
-  <ngb-panel *ngFor="let user of userList; trackBy:trackByFn">
+  <ngb-panel *ngFor="let user of users$ | async; trackBy:trackByFn">
     <ng-template ngbPanelTitle>
       <app-user-basic-info
         [user]="user"
@@ -7,7 +7,9 @@
       ></app-user-basic-info>
     </ng-template>
     <ng-template ngbPanelContent>
-      {{selectedUser$ | async | json}}
+      <app-user-info [user]="selectedUser$ | async">
+
+      </app-user-info>
     </ng-template>
   </ngb-panel>
 </ngb-accordion>

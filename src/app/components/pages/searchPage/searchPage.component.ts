@@ -1,7 +1,7 @@
 import {Component} from '@angular/core';
 import {SearchPageService} from './searchPage.service';
 import {Observable} from 'rxjs';
-import {SearchUserBasic} from './searchPage.dictionary';
+import {UserListUserBasic} from "../../user/userList/userList.dictionary";
 
 @Component({
   selector: 'app-search-page',
@@ -10,7 +10,6 @@ import {SearchUserBasic} from './searchPage.dictionary';
 })
 class SearchPageComponent {
 
-  public users$: Observable<SearchUserBasic[]> = this.searchPageService.users$;
   public resultsCount$: Observable<number> = this.searchPageService.resultsCount$;
 
   constructor(private searchPageService: SearchPageService) {
@@ -20,7 +19,7 @@ class SearchPageComponent {
     this.searchPageService.onSearch(searchQuery);
   }
 
-  public onUserViewMore(user: SearchUserBasic): void {
+  public onUserViewMore(user: UserListUserBasic): void {
     console.log(user);
   }
 }

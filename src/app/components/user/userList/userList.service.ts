@@ -1,11 +1,10 @@
 import {Injectable} from '@angular/core';
-import {SearchUserBasic} from '../../pages/searchPage/searchPage.dictionary';
 import {StoreRootState} from '../../../app.state';
 import {Store} from '@ngrx/store';
 import {UserListSetSelectedUserBasic} from './userList.actions';
 import {Observable} from 'rxjs';
-import {UserListUserInfoExtended} from './userList.dictionary';
-import {userListGetExtendedUserInfoSelector} from './userList.reducer';
+import {UserListUserBasic, UserListUserInfoExtended} from './userList.dictionary';
+import {userListGetExtendedUserInfoSelector, userListGetUsersSelector} from './userList.reducer';
 
 @Injectable()
 class UserListService {
@@ -13,10 +12,13 @@ class UserListService {
   public readonly selectedUser$: Observable<UserListUserInfoExtended> = this.store
     .select(userListGetExtendedUserInfoSelector);
 
+  public readonly users$: Observable<UserListUserBasic[]> = this.store
+    .select(userListGetUsersSelector);
+
   constructor(private store: Store<StoreRootState>) {
   }
 
-  public onUserLoad(user: SearchUserBasic) {
+  public onUserLoad(user: UserListUserBasic) {
     this.store.dispatch(new UserListSetSelectedUserBasic(user));
   }
 }

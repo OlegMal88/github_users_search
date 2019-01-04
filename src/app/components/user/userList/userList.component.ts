@@ -1,8 +1,7 @@
-import {Component, Input} from '@angular/core';
-import {SearchUserBasic} from '../../pages/searchPage/searchPage.dictionary';
+import {Component} from '@angular/core';
 import {UserListService} from './userList.service';
 import {Observable} from 'rxjs';
-import {UserListUserInfoExtended} from './userList.dictionary';
+import {UserListUserBasic, UserListUserInfoExtended} from './userList.dictionary';
 import {NgbAccordionConfig} from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
@@ -12,9 +11,8 @@ import {NgbAccordionConfig} from '@ng-bootstrap/ng-bootstrap';
   providers: [NgbAccordionConfig]
 })
 class UserListComponent {
-  @Input()
-  userList: SearchUserBasic[];
 
+  public readonly users$: Observable<UserListUserBasic[]> = this.userListService.users$;
   public readonly selectedUser$: Observable<UserListUserInfoExtended> = this.userListService.selectedUser$;
 
   constructor(private ngbAccordionConfig: NgbAccordionConfig,
@@ -22,11 +20,11 @@ class UserListComponent {
     this.ngbAccordionConfig.closeOthers = true;
   }
 
-  public trackByFn(index, item: SearchUserBasic): string {
+  public trackByFn(index, item: UserListUserBasic): string {
     return item.login; // or item.id
   }
 
-  public onUserViewMore(user: SearchUserBasic): void {
+  public onUserViewMore(user: UserListUserBasic): void {
     this.userListService.onUserLoad(user);
   }
 }

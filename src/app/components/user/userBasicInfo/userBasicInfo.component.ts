@@ -1,5 +1,5 @@
 import {Component, EventEmitter, Input, Output} from '@angular/core';
-import {SearchUserBasic} from '../../pages/searchPage/searchPage.dictionary';
+import {UserListUserBasic} from '../userList/userList.dictionary';
 
 @Component({
   selector: 'app-user-basic-info',
@@ -7,17 +7,17 @@ import {SearchUserBasic} from '../../pages/searchPage/searchPage.dictionary';
   styleUrls: ['./userBasicInfo.styles.css']
 })
 class UserBasicInfoComponent {
-  private _user: SearchUserBasic;
+  private _user: UserListUserBasic;
 
   @Output()
-  userViewMore: EventEmitter<SearchUserBasic> = new EventEmitter<SearchUserBasic>();
+  userViewMore: EventEmitter<UserListUserBasic> = new EventEmitter<UserListUserBasic>();
 
   @Input()
   set user(user) {
     this._user = user;
   }
 
-  get user(): SearchUserBasic {
+  get user(): UserListUserBasic {
     return this._user;
   }
 
