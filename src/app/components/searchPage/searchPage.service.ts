@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {StoreRootState} from '../../../app.state';
+import {StoreRootState} from '../../app.state';
 import {Store} from '@ngrx/store';
 import {SearchSetQuery} from './searchPage.action';
 import {Observable} from 'rxjs';

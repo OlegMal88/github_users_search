@@ -1,7 +1,7 @@
 import {Component, Input} from '@angular/core';
 import {UserListUserInfoExtended} from '../userList/userList.dictionary';
 import {Router} from '@angular/router';
-import {REPOSITORIES_ROUTE_LINK} from "../../../repositories/repositories.dictionary";
+import {REPOSITORIES_ROUTE_LINK} from '../../../repositories/repositories.dictionary';
 
 @Component({
   selector: 'app-user-info',

@@ -1,7 +1,7 @@
 import {Component} from '@angular/core';
 import {SearchPageService} from './searchPage.service';
 import {Observable} from 'rxjs';
-import {UserListUserBasic} from "../../user/userList/userList.dictionary";
+import {UserListUserBasic} from '../user/userList/userList.dictionary';
 
 @Component({
   selector: 'app-search-page',

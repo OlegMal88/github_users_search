@@ -1,5 +1,5 @@
 import {ActionReducerMap} from '@ngrx/store';
-import {searchReducer, SearchState} from './components/pages/searchPage/searchPage.reducer';
+import {searchReducer, SearchState} from './components/searchPage/searchPage.reducer';
 import {userListReducer, UserListState} from './components/user/userList/userList.reducer';
 
 interface StoreRootState {

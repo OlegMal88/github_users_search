@@ -12,9 +12,9 @@ import 'rxjs/add/operator/do';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/filter';
 import {Observable} from 'rxjs';
-import {GitHubDataService} from '../../../shared/services/GitHubData.service';
-import {UserListUsersInfo} from '../../user/userList/userList.dictionary';
-import {UserListGetUsersFailure, UserListSetUsersInfo} from '../../user/userList/userList.actions';
+import {GitHubDataService} from '../../shared/services/GitHubData.service';
+import {UserListUsersInfo} from '../user/userList/userList.dictionary';
+import {UserListGetUsersFailure, UserListSetUsersInfo} from '../user/userList/userList.actions';
 
 @Injectable()
 class SearchPageEffects {
