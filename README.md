@@ -1,3 +1,10 @@
+# Steps to install the application 
+
+1. Install globally Angular CLI - npm i @angular/cli@1
+2. Install node_modules through the running - npm i 
+3. To run application locally - ng serve
+4. To run tests locally - ng test
+
 # GithubUsersSearch
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.7.4.
