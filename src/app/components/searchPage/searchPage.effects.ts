@@ -5,7 +5,6 @@ import {
   SearchSetQuery,
   SearchSetSearchResultCount
 } from './searchPage.actions';
-import {of} from 'rxjs/observable/of';
 import 'rxjs/add/operator/switchMap';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/do';
@@ -19,7 +18,7 @@ import {UserListGetUsersFailure, UserListSetUsersInfo} from '../user/userList/us
 @Injectable()
 class SearchPageEffects {
   @Effect()
-  public onSearch = this.actions$
+  public onSearch$ = this.actions$
     .filter((v: SearchAction) => v instanceof SearchSetQuery)
     .switchMap(({payload}: SearchSetQuery) => this.gitHubDataService
       .searchUsers<UserListUsersInfo>(payload)
@@ -27,7 +26,7 @@ class SearchPageEffects {
         .from([new UserListSetUsersInfo(items), new SearchSetSearchResultCount(total_count)]))
       .catch((err: Error) => {
         console.error('[SearchPageEffects] Error has been occured while fetching users.', err);
-        return of(new UserListGetUsersFailure());
+        return Observable.of(new UserListGetUsersFailure());
       })
     );
 
