@@ -3,7 +3,7 @@ import {
   SEARCH_SET_SEARCH_RESULT_COUNT,
   SearchSetQuery,
   SearchSetSearchResultCount
-} from "./searchPage.actions";
+} from './searchPage.actions';
 
 describe('searchPage.actions', () => {
   it('should check SearchSetQuery parameters', () => {

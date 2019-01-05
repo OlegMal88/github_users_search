@@ -1,7 +1,7 @@
-import {SearchPageEffects} from "./searchPage.effects";
+import {SearchPageEffects} from './searchPage.effects';
 import {getTestScheduler} from 'jasmine-marbles';
-import {SearchSetQuery, SearchSetSearchResultCount} from "./searchPage.actions";
-import {UserListGetUsersFailure, UserListSetUsersInfo} from "../user/userList/userList.actions";
+import {SearchSetQuery, SearchSetSearchResultCount} from './searchPage.actions';
+import {UserListGetUsersFailure, UserListSetUsersInfo} from '../user/userList/userList.actions';
 
 describe('SearchPageEffects', () => {
   let sut: SearchPageEffects,

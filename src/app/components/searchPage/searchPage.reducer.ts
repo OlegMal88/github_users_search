@@ -1,7 +1,7 @@
 import {SearchAction, SearchSetQuery, SearchSetSearchResultCount} from './searchPage.actions';
 import {createSelector, MemoizedSelector} from '@ngrx/store';
 import {searchRootStateSelector} from '../../app.dictionary';
-import {StoreRootState} from "../../app.state";
+import {StoreRootState} from '../../app.state';
 
 interface SearchState {
   query: string;

@@ -1,4 +1,4 @@
-import {SearchPageComponent} from "./searchPage.component";
+import {SearchPageComponent} from './searchPage.component';
 
 describe('SearchPageComponent', () => {
   let sut: SearchPageComponent,

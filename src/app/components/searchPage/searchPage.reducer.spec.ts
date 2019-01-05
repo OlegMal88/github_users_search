@@ -1,5 +1,5 @@
-import {searchDefaultState, searchReducer} from "./searchPage.reducer";
-import {SearchSetQuery, SearchSetSearchResultCount} from "./searchPage.actions";
+import {searchDefaultState, searchReducer} from './searchPage.reducer';
+import {SearchSetQuery, SearchSetSearchResultCount} from './searchPage.actions';
 
 describe('searchReducer', () => {
   it('should get default of reducer', () => {
