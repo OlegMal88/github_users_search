@@ -4,7 +4,7 @@ import {
   SearchAction,
   SearchSetQuery,
   SearchSetSearchResultCount
-} from './searchPage.action';
+} from './searchPage.actions';
 import {of} from 'rxjs/observable/of';
 import 'rxjs/add/operator/switchMap';
 import 'rxjs/add/operator/map';

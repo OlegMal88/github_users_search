@@ -1,25 +1,33 @@
-import {async, ComponentFixture, TestBed} from '@angular/core/testing';
+import {SearchPageComponent} from "./searchPage.component";
 
-import {SearchComponent} from './searchPage.component';
-
-describe('SearchComponent', () => {
-  let component: SearchComponent;
-  let fixture: ComponentFixture<SearchComponent>;
-
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [SearchComponent]
-    })
-      .compileComponents();
-  }));
+describe('SearchPageComponent', () => {
+  let sut: SearchPageComponent,
+    serviceMock: any;
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(SearchComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
+
+    serviceMock = {
+      onSearch: jasmine.createSpy('onSearch'),
+      resultsCount$: 12
+    };
+
+    sut = new SearchPageComponent(serviceMock);
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
+  describe('resultsCount$', () => {
+    it('should get resultCount$ value from the server ', () => {
+      expect(sut.resultsCount$)
+        .toBe(12 as any);
+    });
+  });
+
+  describe('onSearchChange', () => {
+    it('should execute search', () => {
+
+      sut.onSearchChange('value');
+
+      expect(serviceMock.onSearch)
+        .toHaveBeenCalledWith('value');
+    });
   });
 });

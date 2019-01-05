@@ -1,7 +1,6 @@
 import {Component} from '@angular/core';
 import {SearchPageService} from './searchPage.service';
 import {Observable} from 'rxjs';
-import {UserListUserBasic} from '../user/userList/userList.dictionary';
 
 @Component({
   selector: 'app-search-page',
@@ -17,10 +16,6 @@ class SearchPageComponent {
 
   public onSearchChange(searchQuery: string): void {
     this.searchPageService.onSearch(searchQuery);
-  }
-
-  public onUserViewMore(user: UserListUserBasic): void {
-    console.log(user);
   }
 }
 

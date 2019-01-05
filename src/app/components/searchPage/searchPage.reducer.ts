@@ -1,6 +1,7 @@
-import {SearchAction, SearchSetQuery, SearchSetSearchResultCount} from './searchPage.action';
-import {createSelector} from '@ngrx/store';
+import {SearchAction, SearchSetQuery, SearchSetSearchResultCount} from './searchPage.actions';
+import {createSelector, MemoizedSelector} from '@ngrx/store';
 import {searchRootStateSelector} from '../../app.dictionary';
+import {StoreRootState} from "../../app.state";
 
 interface SearchState {
   query: string;
@@ -25,11 +26,14 @@ function searchReducer(state: SearchState = searchDefaultState, action: SearchAc
   return state;
 }
 
-const searchGetQuerySelector = createSelector(searchRootStateSelector, (state: SearchState) => state.query);
-const searchGetResultsCountSelector = createSelector(searchRootStateSelector, (state: SearchState) => state.resultCount);
+const searchGetQuerySelector: MemoizedSelector<StoreRootState, string> =
+  createSelector(searchRootStateSelector, (state: SearchState) => state.query);
+const searchGetResultsCountSelector: MemoizedSelector<StoreRootState, number> =
+  createSelector(searchRootStateSelector, (state: SearchState) => state.resultCount);
 
 export {
   searchReducer,
+  searchDefaultState,
   searchGetQuerySelector,
   searchGetResultsCountSelector,
   SearchState

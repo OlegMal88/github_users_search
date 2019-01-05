@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {StoreRootState} from '../../app.state';
 import {Store} from '@ngrx/store';
-import {SearchSetQuery} from './searchPage.action';
+import {SearchSetQuery} from './searchPage.actions';
 import {Observable} from 'rxjs';
 import {searchGetResultsCountSelector} from './searchPage.reducer';
 
